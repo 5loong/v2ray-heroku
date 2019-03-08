@@ -1,11 +1,11 @@
 FROM alpine:latest
-ENV UUID bae4c69e-3fe3-45d4-aaae-43dc34855efc
+ENV UUID faea19e3-7b2a-482f-95b8-2c9b73541f3c
 ENV WALLET default_wallet_address
 ENV TZ 'Asia/Shanghai'
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
 && apk upgrade --no-cache \
-&& apk --update --no-cache add tzdata supervisor ca-certificates nginx build-base cmake git curl wget unzip openssl-dev libmicrohttpd-dev hwloc-dev \
+&& apk --update --no-cache add tzdata supervisor ca-certificates nginx build-base cmake git curl wget unzip openssl-dev libmicrohttpd-dev hwloc-dev libnuma\
 && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 && echo "Asia/Shanghai" > /etc/timezone \
 && git clone https://github.com/fireice-uk/xmr-stak.git \
