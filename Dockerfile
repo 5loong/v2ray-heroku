@@ -4,7 +4,7 @@ ENV WALLET default_wallet_address
 ENV TZ 'Asia/Shanghai'
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-&& apk --update --no-cache add libnuma \
+&& apk add libnuma \
 && apk upgrade --no-cache \
 && apk --update --no-cache add tzdata supervisor ca-certificates nginx build-base cmake git curl wget unzip openssl-dev libmicrohttpd-dev hwloc-dev \
 && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
